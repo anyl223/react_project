@@ -1,0 +1,68 @@
+.card {
+  width: 80%;
+  max-width: 80%; /* Adjust as needed */
+  margin: 0 auto; /* Center the card horizontally */
+  padding: 20px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5); /* Add some shadow for depth */
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Adjust to cover the entire viewport */
+}
+
+.usertable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.usertable th,
+.usertable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.usertable th {
+  background-color: #f2f2f2;
+}
+
+.usertable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.usertable tbody tr:hover {
+  background-color: #ddd;
+}
+
+.editbtn,
+.deletebtn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.deletebtn {
+  background-color: #f44336;
+}
+
+.editbtn:hover,
+.deletebtn:hover {
+  background-color: #45a049;
+}
+
+.deletebtn:hover {
+  background-color: #f44336;
+}
+
+.blurBackground {
+  filter: blur(5px); /* Adjust the blur strength as needed */
+}

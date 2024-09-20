@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GisApplication<gis>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gis.gis.GisApplication",
+            "projectName": "gis",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

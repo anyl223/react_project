@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the layout covers the whole viewport height */
+}
+
+.content {
+  flex-grow: 1; /* Allow content to expand to fill remaining space */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+/* Position Header at the top and Footer at the bottom */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  padding: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  padding: 1rem;
+}

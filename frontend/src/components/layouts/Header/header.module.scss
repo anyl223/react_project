@@ -1,0 +1,28 @@
+.headercontainer {
+    background-color: #3182ce;
+    color: #fff;
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    margin: 0;
+  }
+  
+  .navlinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #ff0;
+}

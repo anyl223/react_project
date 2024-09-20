@@ -1,0 +1,42 @@
+
+.formContainer {
+  height: 100vh;
+}
+
+.formCard {
+  max-width: 400px;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.headercontainer {
+    background-color: #3182ce;
+    color: #fff;
+    padding: 1.5rem;
+  }
+  
+  .logo {
+    margin: 0;
+  }
+  
+  .navlinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #ff0;
+}
