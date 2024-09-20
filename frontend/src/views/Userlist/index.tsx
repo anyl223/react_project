@@ -1,8 +1,23 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
-import scss from './userlist.module.scss';
-import fetcher from '@/utils/fetcher';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+} from "@chakra-ui/react";
+import scss from "./userlist.module.scss";
+import fetcher from "@/utils/fetcher";
 
 interface User {
   id: number;
@@ -23,17 +38,19 @@ const UserTable = () => {
   const fetchUsers = async () => {
     try {
       const response = await fetcher("/users/userlist", "POST");
-     console.log("response",response);
-     
+      console.log("response", response);
+
       setUsers(response.result);
     } catch (error) {
       console.error("Failed to fetch users:", error);
     }
   };
- 
+
   const handleDelete = async (id: number) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/users/delete-user/${id}`);
+      const response = await axios.delete(
+        `http://localhost:8080/users/delete-user/${id}`
+      );
       console.log("User deleted successfully:", response);
       // After successful deletion, you may want to fetch the updated user list
       fetchUsers();
@@ -53,7 +70,11 @@ const UserTable = () => {
   };
 
   return (
-    <div className={isOpen ? `${scss.blurBackground} ${scss.centered}` : scss.centered}>
+    <div
+      className={
+        isOpen ? `${scss.blurBackground} ${scss.centered}` : scss.centered
+      }
+    >
       <div className={scss.card}>
         <table className={scss.usertable}>
           <thead>
@@ -65,7 +86,7 @@ const UserTable = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map(user => (
+            {users.map((user) => (
               <tr key={user.id}>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
@@ -77,16 +98,21 @@ const UserTable = () => {
                   >
                     Edit
                   </Button>
-                  <button className="delete-btn" onClick={() => handleDelete(user.id)}
-               style={{
-                backgroundColor: "#f44336",
-                color: "#fff",
-                border: "none",
-                padding: "0.50rem 1rem",
-                borderRadius: "20px",
-                cursor: "pointer",
-                transition: "background-color 0.3s ease",
-              }}>Delete</button>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDelete(user.id)}
+                    style={{
+                      backgroundColor: "#f44336",
+                      color: "#fff",
+                      border: "none",
+                      padding: "0.50rem 1rem",
+                      borderRadius: "20px",
+                      cursor: "pointer",
+                      transition: "background-color 0.3s ease",
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
@@ -109,7 +135,7 @@ const UserTable = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                {users.map(user => (
+                {users.map((user) => (
                   <Tr key={user.id}>
                     <Td>{user.username}</Td>
                     <Td>{user.email}</Td>
@@ -120,7 +146,9 @@ const UserTable = () => {
             </Table>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" onClick={handleCloseModal}>Close</Button>
+            <Button colorScheme="blue" onClick={handleCloseModal}>
+              Close
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
