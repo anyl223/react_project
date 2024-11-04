@@ -12,8 +12,14 @@ public interface UserRepo extends JpaRepository<Users, Long> {
 
     Users findByUsername(String username);
 
-    @Query(nativeQuery = true, value = "select * from login_users where role='user' order by id")
-    List<Map<String, Object>> getUsers(Long id);
+    // @Query(nativeQuery = true, value = " ")
+    // List<Map<String, Object>> getUsers();
+
+    @Query(nativeQuery = true,
+    value = """
+       select * from login_users where role='user'
+          """)
+List<Map<String, Object>> getUsers(Long id);
 
     boolean existsByUsername(String username);
 

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Header from '../components/layouts/Header';
-import Footer from '../components/layouts/Footer';
-import LoginPage from '@/views/Login';
+import React, { useState } from "react";
+import Header from "../components/layouts/Header/index";
+import Footer from "../components/layouts/Footer";
+import LoginPage from "@/views/Login";
 import Register from "@/views/Register";
-import scss from './layout.module.scss'
+import scss from "./layout.module.scss";
 
 const Index = () => {
   const [showRegister, setShowRegister] = useState(false);

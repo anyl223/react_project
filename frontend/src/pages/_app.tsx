@@ -8,7 +8,6 @@ import nProgress from "nprogress";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-
 const inter = Inter({ subsets: ["latin"] });
 const chakraTheme = extendTheme({
   fonts: {
@@ -39,22 +38,25 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, []);
 
-  return <>
-  <ChakraProvider theme={chakraTheme}>
-  <ToastContainer
-        position="bottom-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        // theme="colored"
-      />
+  return (
+    <>
+      <ChakraProvider theme={chakraTheme}>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          // theme="colored"
+        />
         <AuthGuard>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
         </AuthGuard>
-      </ChakraProvider></>
+      </ChakraProvider>
+    </>
+  );
 }
